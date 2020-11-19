@@ -12,13 +12,32 @@ public class FirstLast6App {
 
 	public static void main(String[] args) {
 		
+		// Create test arrays
+		int[] arr1 = {1, 2, 6};
+		int[] arr2 = {6, 1, 2, 3};
+		int[] arr3 = {13, 6, 1, 2, 3};
 		
+		// Output test results
+		System.out.println(firstLast6(arr1));
+		System.out.println(firstLast6(arr2));
+		System.out.println(firstLast6(arr3));
 		
 	}
 	
-	public boolean firstLast6(int[] nums) {
+	/**
+	 * Checks to see if the first or last number in the array is a 6.
+	 * 
+	 * @param nums
+	 * @return true/false
+	 */
+	public static boolean firstLast6(int[] nums) {
+		int lastNum = nums.length - 1;
 		
-		return true;
+		if(nums[0] == 6 || nums[lastNum] == 6) {
+			return true;
+		}
+		
+		return false;
 	}
 
 }
