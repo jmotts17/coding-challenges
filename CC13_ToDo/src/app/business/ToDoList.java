@@ -5,16 +5,13 @@ import java.util.ArrayList;
 public class ToDoList {
 
 	private ArrayList<ToDo> toDoList = new ArrayList<ToDo>();
-	private int count = 0;
 
 	public ToDoList() {
 		super();
-		this.count = 0;
 	}
 
 	public ToDoList(ArrayList<ToDo> toDoList) {
 		this.toDoList = toDoList;
-		this.count = 0;
 	}
 
 	public ArrayList<ToDo> getToDoList() {
@@ -30,14 +27,20 @@ public class ToDoList {
 	}
 	
 	public void displayList() {
-		this.count++;
-		System.out.println("To Do List");
-		for(ToDo td : toDoList) {
-			System.out.print(this.count + ") " + td.getDescription());
-			if(td.isComplete()) {
-				System.out.print("\tX");
+		int count = 0;
+		System.out.println("\nTo Do List");
+		System.out.println("----------");
+		if(toDoList.isEmpty()) {
+			System.out.println("Empty! Add an item.");
+		} else {
+			for(ToDo td : toDoList) {
+				count++;
+				System.out.print(count + ") " + td.getDescription() + "\t\t[");
+				if(td.isComplete()) {
+					System.out.print("X");
+				}
+				System.out.print("]\n");
 			}
-			System.out.print("\n");
 		}
 	}
 	
