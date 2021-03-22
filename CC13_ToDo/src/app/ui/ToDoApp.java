@@ -45,7 +45,7 @@ public class ToDoApp {
 			
 		} while(response != 6);
 		
-		System.out.println("Goodbye!");
+		System.out.println("\nGoodbye!");
 	}
 	
 	public static void displayMenu() {
@@ -82,6 +82,11 @@ public class ToDoApp {
 	public static void markComplete() {
 		int task = getTaskNumber();
 		toDoList.getTask(task).setComplete();		
+	}
+	
+	public static void deleteTask() {
+		int task = getTaskNumber();
+		toDoList.deleteTask(task);	
 	}
 	
 }

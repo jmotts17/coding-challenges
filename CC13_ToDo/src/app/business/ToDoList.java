@@ -34,6 +34,10 @@ public class ToDoList {
 		return toDoList.get(taskNum);
 	}
 	
+	public void deleteTask(int taskNum) {
+		toDoList.remove(taskNum);
+	}
+	
 	public void displayList() {
 		int count = 0;
 		System.out.println("\nTo Do List");
