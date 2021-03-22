@@ -26,6 +26,14 @@ public class ToDoList {
 		toDoList.add(toDoItem);
 	}
 	
+	public int getSize() {
+		return toDoList.size();
+	}
+	
+	public ToDo getTask(int taskNum) {
+		return toDoList.get(taskNum);
+	}
+	
 	public void displayList() {
 		int count = 0;
 		System.out.println("\nTo Do List");
@@ -35,11 +43,11 @@ public class ToDoList {
 		} else {
 			for(ToDo td : toDoList) {
 				count++;
-				System.out.print(count + ") " + td.getDescription() + "\t\t[");
+				System.out.print(count + ") [");
 				if(td.isComplete()) {
 					System.out.print("X");
 				}
-				System.out.print("]\n");
+				System.out.print("]\t" + td.getDescription() + "\n");
 			}
 		}
 	}
