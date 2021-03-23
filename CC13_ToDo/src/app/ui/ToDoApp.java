@@ -38,6 +38,9 @@ public class ToDoApp {
 				case 4:
 					deleteTask();
 					break;
+				case 5:
+					renameTask();
+					break;
 			}
 			System.out.println();
 			displayMenu();
@@ -87,6 +90,14 @@ public class ToDoApp {
 	public static void deleteTask() {
 		int task = getTaskNumber();
 		toDoList.deleteTask(task);	
+	}
+	
+	public static void renameTask() {
+		int task = getTaskNumber();
+		scanner.nextLine();
+		System.out.print("Please enter new task name: ");
+		String newTask = scanner.nextLine();
+		toDoList.renameTask(task, newTask);
 	}
 	
 }

@@ -38,6 +38,10 @@ public class ToDoList {
 		toDoList.remove(taskNum);
 	}
 	
+	public void renameTask(int taskNum, String newTask) {
+		toDoList.get(taskNum).setDescription(newTask);
+	}
+	
 	public void displayList() {
 		int count = 0;
 		System.out.println("\nTo Do List");
